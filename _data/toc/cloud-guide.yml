@@ -29,6 +29,9 @@ pages:
         - label: Add Staging and Production to Pro projects UI
           url: /cloud/trouble/pro-env-management.html
 
+        - label: Scaling architecture
+          url: /cloud/architecture/architecture-scaling.html
+
     - label: Technologies and requirements
       url: /cloud/requirements/cloud-requirements.html
       children:
