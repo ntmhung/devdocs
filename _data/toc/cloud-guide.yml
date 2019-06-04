@@ -31,6 +31,7 @@ pages:
 
         - label: Scaling architecture
           url: /cloud/architecture/architecture-scaling.html
+          include_versions: ["2.1"]
 
     - label: Technologies and requirements
       url: /cloud/requirements/cloud-requirements.html
