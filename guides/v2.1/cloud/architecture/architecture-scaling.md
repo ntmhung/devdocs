@@ -13,18 +13,22 @@ Historically, the Pro architecture consisted of 3 nodes, each containing a full 
 
 ### Database tier scaling
 
-When the database tier approaches capacity, the only way to scale is to increase the server size, such as boosting the CPU power and memory. Capacity is limited to the size of the node that is available.
+![Database tier scaling]
+
+There are 3 nodes for the database and services, such as New Relic and Fastly. When the database (db) tier approaches capacity, the only way to scale is to increase the server size, such as boosting the CPU power and memory. Capacity is limited to the size of the node that is available.
 
 Further optimizing the database performance includes [scaling the web tier](#web-tier-scaling) and routing traffic. You can route traffic based on the node type. For example, you can serve PHP traffic on the database node or you can isolate the database node from the PHP traffic.
 
 Consider the following when scaling the database tier:
 
 -  Only vertical scaling is available because of the limitations with the technologies used.
--  Non-master database nodes can not be used reliably. (WHY?)
+-  Non-master database nodes can not be used reliably. (Need to explain this?)
 
 ### Web tier scaling
 
-In addition to increasing power and memory, the web tier can scale horizontally by adding extra web servers to an existing cluster when constricted at the PHP level. This complements the vertical scaling provided by the database tier.
+![Web tier scaling]
+
+There are 3 nodes for the web servers. In addition to vertical scaling by increasing power and memory, the web tier can scale horizontally by adding extra web servers to an existing cluster when constricted at the PHP level. This complements the vertical scaling provided by the database tier. (Introduce the concept of balancing...)
 
 Consider the following when scaling the web tier:
 
@@ -32,17 +36,22 @@ Consider the following when scaling the web tier:
     -  all `M4 xlarge` for WEB
     -  all `C4 xlarge` for DB
 -  Instances of a specific type and size must be available when scaling.
--  Must balance the usage of instance types & sizes. (how to describe this??)
+-  Must balance the usage of instance types & sizes. (how to describe this?? )
 
 ## Managing nodes
 
 Pure speculation beyond this point...
 
 -  migrating between instance types
--  routing traffic (load balancing?)
+-  routing traffic (is load balancing a part of this concept?)
 -  monitoring
 -  scaling
     - up-sizing
     - down-sizing
 
 ### Load balancing
+
+
+
+[Database tier scaling]: {{site.baseurl}}/common/images/cloud/scaling-db.png
+[Web tier scaling]: {{site.baseurl}}/common/images/cloud/scaling-web.png
