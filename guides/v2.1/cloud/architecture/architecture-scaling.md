@@ -13,9 +13,9 @@ Historically, the Pro architecture consisted of 3 nodes, each containing a full 
 
 ### Database tier scaling
 
-![Database tier scaling]
-
 There are 3 nodes for the database and services, such as New Relic and Fastly. When the database (db) tier approaches capacity, the only way to scale is to increase the server size, such as boosting the CPU power and memory. Capacity is limited to the size of the node that is available.
+
+![Database tier scaling]
 
 Further optimizing the database performance includes [scaling the web tier](#web-tier-scaling) and routing traffic. You can route traffic based on the node type. For example, you can serve PHP traffic on the database node or you can isolate the database node from the PHP traffic.
 
@@ -26,9 +26,11 @@ Consider the following when scaling the database tier:
 
 ### Web tier scaling
 
+There are 3 nodes for the web servers. In addition to vertical scaling by increasing power and memory, the web tier can scale horizontally by adding extra web servers to an existing cluster when constricted at the PHP level.
+
 ![Web tier scaling]
 
-There are 3 nodes for the web servers. In addition to vertical scaling by increasing power and memory, the web tier can scale horizontally by adding extra web servers to an existing cluster when constricted at the PHP level. This complements the vertical scaling provided by the database tier. (Introduce the concept of balancing...)
+This complements the vertical scaling provided by the database tier. (Introduce the concept of balancing...)
 
 Consider the following when scaling the web tier:
 
